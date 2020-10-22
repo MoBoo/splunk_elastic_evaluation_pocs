@@ -1,11 +1,12 @@
+#!/bin/bash
 # This script is used to restore default permissions and owners for splunk use cases.
 # Splunks docker images are build using ansible and change permissions for mouted files.
 
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
+if [ "$EUID" -ne 0 ];
+then
+  echo "Please run as root"
   exit
 fi
-
 
 echo ">>> Reset Permissions for $(pwd)"
 echo ">>> Reset owner and group to mo:mo"
