@@ -1,0 +1,80 @@
+{"index": {"_id": "1"}}
+{"status_code": 100, "status_desc": "Continue"}
+{"index": {"_id": "2"}}
+{"status_code": 101, "status_desc": "Switching Protocols"}
+{"index": {"_id": "3"}}
+{"status_code": 200, "status_desc": "OK"}
+{"index": {"_id": "4"}}
+{"status_code": 201, "status_desc": "Created"}
+{"index": {"_id": "5"}}
+{"status_code": 202, "status_desc": "Accepted"}
+{"index": {"_id": "6"}}
+{"status_code": 203, "status_desc": "Non-Authoritative Information"}
+{"index": {"_id": "7"}}
+{"status_code": 204, "status_desc": "No Content"}
+{"index": {"_id": "8"}}
+{"status_code": 205, "status_desc": "Reset Content"}
+{"index": {"_id": "9"}}
+{"status_code": 206, "status_desc": "Partial Content"}
+{"index": {"_id": "10"}}
+{"status_code": 300, "status_desc": "Multiple Choices"}
+{"index": {"_id": "11"}}
+{"status_code": 301, "status_desc": "Moved Permanently"}
+{"index": {"_id": "12"}}
+{"status_code": 302, "status_desc": "Found"}
+{"index": {"_id": "13"}}
+{"status_code": 303, "status_desc": "See Other"}
+{"index": {"_id": "14"}}
+{"status_code": 304, "status_desc": "Not Modified"}
+{"index": {"_id": "15"}}
+{"status_code": 305, "status_desc": "Use Proxy"}
+{"index": {"_id": "16"}}
+{"status_code": 307, "status_desc": "Temporary Redirect"}
+{"index": {"_id": "17"}}
+{"status_code": 400, "status_desc": "Bad Request"}
+{"index": {"_id": "18"}}
+{"status_code": 401, "status_desc": "Unauthorized"}
+{"index": {"_id": "19"}}
+{"status_code": 402, "status_desc": "Payment Required"}
+{"index": {"_id": "20"}}
+{"status_code": 403, "status_desc": "Forbidden"}
+{"index": {"_id": "21"}}
+{"status_code": 404, "status_desc": "Not Found"}
+{"index": {"_id": "22"}}
+{"status_code": 405, "status_desc": "Method Not Allowed"}
+{"index": {"_id": "23"}}
+{"status_code": 406, "status_desc": "Not Acceptable"}
+{"index": {"_id": "24"}}
+{"status_code": 407, "status_desc": "Proxy Authentication Required"}
+{"index": {"_id": "25"}}
+{"status_code": 408, "status_desc": "Request Timeout"}
+{"index": {"_id": "26"}}
+{"status_code": 409, "status_desc": "Conflict"}
+{"index": {"_id": "27"}}
+{"status_code": 410, "status_desc": "Gone"}
+{"index": {"_id": "28"}}
+{"status_code": 411, "status_desc": "Length Required"}
+{"index": {"_id": "29"}}
+{"status_code": 412, "status_desc": "Precondition Failed"}
+{"index": {"_id": "30"}}
+{"status_code": 413, "status_desc": "Request Entity Too Large"}
+{"index": {"_id": "31"}}
+{"status_code": 414, "status_desc": "Request-URI Too Long"}
+{"index": {"_id": "32"}}
+{"status_code": 415, "status_desc": "Unsupported Media Type"}
+{"index": {"_id": "33"}}
+{"status_code": 416, "status_desc": "Requested Range Not Satisfiable"}
+{"index": {"_id": "34"}}
+{"status_code": 417, "status_desc": "Expectation Failed"}
+{"index": {"_id": "35"}}
+{"status_code": 500, "status_desc": "Internal Server Error"}
+{"index": {"_id": "36"}}
+{"status_code": 501, "status_desc": "Not Implemented"}
+{"index": {"_id": "37"}}
+{"status_code": 502, "status_desc": "Bad Gateway"}
+{"index": {"_id": "38"}}
+{"status_code": 503, "status_desc": "Service Unavailable"}
+{"index": {"_id": "39"}}
+{"status_code": 504, "status_desc": "Gateway Timeout"}
+{"index": {"_id": "40"}}
+{"status_code": 505, "status_desc": "HTTP Version Not Supported"}

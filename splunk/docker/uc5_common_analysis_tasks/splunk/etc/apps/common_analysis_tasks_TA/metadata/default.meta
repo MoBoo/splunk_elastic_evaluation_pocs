@@ -1,0 +1,49 @@
+[]
+access = read : [ * ], write : [ * ]
+export = system
+
+[savedsearches/http_logs]
+access = read : [ * ], write : [ * ]
+export = system
+version = 8.0.6
+
+[savedsearches/add_column]
+access = read : [ * ], write = [ * ]
+export = system
+version = 8.0.6
+
+[savedsearches/add_column_conditional]
+access = read : [ * ], write : [ * ]
+export = system
+version = 8.0.6
+
+[savedsearches/aggregation_count_by_method]
+access = read : [ * ], write : [ * ]
+export = system
+version = 8.0.6
+
+[savedsearches/aggregation_count_by_multiple_fields]
+access = read : [ * ], write : [ * ]
+export = system
+version = 8.0.6
+
+[savedsearches/aggregation_methods_by_field]
+access = read : [ * ], write : [ * ]
+export = system
+version = 8.0.6
+
+[savedsearches/filter_by_fields]
+access = read : [ * ], write : [ * ]
+export = system
+version = 8.0.6
+
+[savedsearches/filter_columns]
+access = read : [ * ], write : [ * ]
+export = system
+version = 8.0.6
+
+[savedsearches/rename_column]
+access = read : [ * ], write : [ * ]
+export = system
+version = 8.0.6
+

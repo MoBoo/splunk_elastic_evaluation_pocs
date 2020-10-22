@@ -1,0 +1,8 @@
+Using a scripted-field (https://www.elastic.co/guide/en/kibana/current/scripted-fields.html) to map http status codes to status code text.
+This is usually done via the Kibana-Web-Interface and then automatically applied by kibana at search time.
+
+Scripted-Fields are passed to a Elasticsearch query (https://www.elastic.co/guide/en/elasticsearch/reference/current/search-fields.html#script-fields).
+This PoC shows how scripted-fields are applied. In Kibana they can be created in 'Stack Management > Index Patterns > Select Index Pattern > Scripted Fields'.
+
+Scripted fields are limited in their usage in further search by the same request.
+But can be used in visualizations in Kibana

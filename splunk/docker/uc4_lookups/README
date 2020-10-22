@@ -1,0 +1,1 @@
+Lookups also can be done via scripts, e.g. python. This gives almost maximum freedom. But lookups will always be executed at search time.

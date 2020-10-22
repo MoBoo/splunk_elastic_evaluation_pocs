@@ -1,0 +1,10 @@
+# path.configs cwd is /usr/share/logstash when running in docker
+
+- pipeline.id: main
+  path.config: "pipeline/pipelines.d/main/{01_input,01_filter,01_output}.cfg"
+
+- pipeline.id: test-processing
+  path.config: "pipeline/pipelines.d/test-processing/{01_input,01_filter,01_output}.cfg" 
+
+- pipeline.id: access_combined_wcookie-processing
+  path.config: "pipeline/pipelines.d/access_combined_wcookie-processing/{01_input,01_filter,01_output}.cfg"

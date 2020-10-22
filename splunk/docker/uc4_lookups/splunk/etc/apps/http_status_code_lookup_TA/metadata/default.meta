@@ -1,0 +1,19 @@
+[]
+access = read : [ * ], write : [ * ]
+export = system
+
+[lookups/http_status_codes.csv]
+access = read : [ * ], write : [ * ]
+export = system
+
+[transforms/http_status_code_lookup]
+access = read : [ * ], write : [ * ]
+export = system
+
+[props/access_combined_wcookie/LOOKUP-http_status_codes_auto_lookup]
+access = read : [ * ], write : [ * ]
+export = system
+
+[props/access_combined_wcookie/EVAL-test]
+access = read : [ * ], write : [ * ]
+export = system

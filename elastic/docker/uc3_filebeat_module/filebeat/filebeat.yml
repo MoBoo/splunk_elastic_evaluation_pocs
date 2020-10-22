@@ -1,0 +1,16 @@
+filebeat.modules:
+- module: apache
+  access:
+    enabled: true
+    var.paths: ["/usr/share/data/access.log"]
+
+output.elasticsearch:
+  hosts: ["elasticsearch:9200"]
+  username: "${ELASTIC_USERNAME}"
+  password: "${ELASTIC_PASSWORD}"
+
+setup.kibana:
+  host: "kibana:5601"
+
+#output.console:
+#  pretty: true

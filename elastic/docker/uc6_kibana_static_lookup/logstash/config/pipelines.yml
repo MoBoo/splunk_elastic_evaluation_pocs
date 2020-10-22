@@ -1,0 +1,4 @@
+# path.configs cwd is /usr/share/logstash when running in docker
+
+- pipeline.id: default
+  path.config: "pipeline/logstash.conf"

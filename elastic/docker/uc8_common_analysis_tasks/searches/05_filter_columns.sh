@@ -1,0 +1,2 @@
+# Return only http method and response status code for all (10 at the time) events
+curl -XGET "http://elasticsearch:9200/http_access_logs-filebeat-7.9.1-2020.10.15/_search" -H 'Content-Type: application/json' -d'{  "size": 0,  "_source": true,  "aggs": {    "request_methods_usage": {      "terms": {        "field": "http.request.method.keyword"      },      "aggs": {        "total_bytes": {          "sum": {            "field": "http.response.bytes.keyword"          }        }      }    }  }}';echo
