@@ -1,0 +1,95 @@
+<form theme="dark">
+  <label>HTTP Demo Dashboard</label>
+  <fieldset submitButton="false" autoRun="true">
+    <input type="time" token="input_time_global" searchWhenChanged="true">
+      <label></label>
+      <default>
+        <earliest>0</earliest>
+        <latest></latest>
+      </default>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <title>Request over Time</title>
+      <chart>
+        <search>
+          <query>index=http_logs | timechart count</query>
+          <earliest>$input_time_0.earliest$</earliest>
+          <latest>$input_time_0.latest$</latest>
+        </search>
+        <option name="charting.chart">line</option>
+        <option name="charting.drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Number of Requests</title>
+      <single>
+        <search>
+          <query>index=http_logs | stats count</query>
+          <earliest>$input_time_0.earliest$</earliest>
+          <latest>$input_time_0.latest$</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </single>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <map>
+        <search>
+          <query>index=http_logs | iplocation clientip | geostats count</query>
+          <earliest>$input_time_global.earliest$</earliest>
+          <latest>$input_time_global.latest$</latest>
+        </search>
+        <option name="drilldown">none</option>
+        <option name="mapping.type">marker</option>
+      </map>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Response Codes</title>
+      <chart>
+        <search>
+          <query>index=http_logs | stats count by status</query>
+          <earliest>$input_time_global.earliest$</earliest>
+          <latest>$input_time_global.latest$</latest>
+        </search>
+        <option name="charting.chart">column</option>
+        <option name="charting.drilldown">all</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+  </row>
+  <row>
+    <panel>
+      <title>Request per HTTP Method</title>
+      <chart>
+        <search>
+          <query>index=http_logs | stats count by method</query>
+          <earliest>$input_time_global.earliest$</earliest>
+          <latest>$input_time_global.latest$</latest>
+        </search>
+        <option name="charting.chart">pie</option>
+        <option name="charting.drilldown">all</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+    <panel>
+      <title>Request per User-Agent</title>
+      <chart>
+        <search>
+          <query>index=http_logs | stats count by useragent</query>
+          <earliest>$input_time_global.earliest$</earliest>
+          <latest>$input_time_global.latest$</latest>
+        </search>
+        <option name="charting.chart">column</option>
+        <option name="charting.drilldown">none</option>
+        <option name="refresh.display">progressbar</option>
+      </chart>
+    </panel>
+  </row>
+</form>

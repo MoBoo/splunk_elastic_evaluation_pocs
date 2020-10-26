@@ -10,7 +10,22 @@ services:
       - SPLUNK_PASSWORD=${UF_PASSWORD}
       - SPLUNK_DEPLOYMENT_SERVER=splunk
     volumes:
-      - ./splunkforwarder/data/log:/var/log
+      - ./universalforwarder/data/log:/var/log
+    networks:
+      - splunk_net
+
+  heavyforwarder:
+    hostname: heavyforwarder
+    image: splunk/splunk:latest
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_PASSWORD=${HF_PASSWORD}
+      - SPLUNK_STANDALONE_URL=splunk
+      - SPLUNK_ROLE=splunk_heavy_forwarder
+      - SPLUNK_DEPLOYMENT_SERVER=splunk
+    volumes:
+      - ./heavyforwarder/data/log:/var/log
+      - ./heavyforwarder/etc/apps/http_log_collection_HF_AddOn:/opt/splunk/etc/apps/http_log_collection_HF_AddOn
     networks:
       - splunk_net
 
@@ -30,9 +45,9 @@ services:
       - splunk_etc:/opt/splunk/etc
       - splunk_var:/opt/splunk/var
       - ./splunk/etc/deployment-apps/http_log_collection_DA:/opt/splunk/etc/deployment-apps/http_log_collection_DA
+      - ./splunk/etc/apps/common_analysis_tasks_TA:/opt/splunk/etc/apps/common_analysis_tasks_TA
       - ./splunk/etc/apps/http_log_collection_TA:/opt/splunk/etc/apps/http_log_collection_TA
       - ./splunk/etc/apps/http_status_code_lookup_TA:/opt/splunk/etc/apps/http_status_code_lookup_TA
-      - ./splunk/etc/apps/http_geoip_lookup_TA:/opt/splunk/etc/apps/http_geoip_lookup_TA
     networks:
       - splunk_net
       
