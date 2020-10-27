@@ -12,6 +12,7 @@ echo ">>> Creating Index Template: http_access_logs_template"
 	  "number_of_replicas": 0
     },
     "mappings": {
+      "dynamic": "false",
       "properties": {
         "client.address":{
 			"type":"keyword"
