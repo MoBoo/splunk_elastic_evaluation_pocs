@@ -1,0 +1,6 @@
+[savedsearches/HTTP%20Internal%20Server%20Errors]
+access = read : [ * ], write : [ * ]
+export = none
+owner = admin
+version = 8.1.0
+modtime = 1603884189.151581000
