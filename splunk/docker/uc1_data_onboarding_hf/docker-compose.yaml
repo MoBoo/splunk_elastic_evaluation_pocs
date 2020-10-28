@@ -3,10 +3,10 @@ version: "3.2"
 services:
   universalforwarder:
     hostname: universalforwarder
-    image: splunk/universalforwarder:latest
+    image: splunk/universalforwarder:${VERSION}
     environment:
       - SPLUNK_START_ARGS=--accept-license
-      - SPLUNK_STANDALONE_URL=splunk
+      - SPLUNK_STANDALONE_URL=heavyforwarder
       - SPLUNK_PASSWORD=${UF_PASSWORD}
       - SPLUNK_DEPLOYMENT_SERVER=splunk
     volumes:
@@ -16,7 +16,7 @@ services:
 
   heavyforwarder:
     hostname: heavyforwarder
-    image: splunk/splunk:latest
+    image: splunk/splunk:${VERSION}
     environment:
       - SPLUNK_START_ARGS=--accept-license
       - SPLUNK_PASSWORD=${HF_PASSWORD}
@@ -25,13 +25,12 @@ services:
       - SPLUNK_DEPLOYMENT_SERVER=splunk
     volumes:
       - ./heavyforwarder/data/log:/var/log
-      - ./heavyforwarder/etc/apps/http_log_collection_HF_AddOn:/opt/splunk/etc/apps/http_log_collection_HF_AddOn
     networks:
       - splunk_net
 
   splunk:
     hostname: splunk
-    image: splunk/splunk:latest
+    image: splunk/splunk:${VERSION}
     environment:
       - SPLUNK_START_ARGS=--accept-license
       - SPLUNK_STANDALONE_URI=0.0.0.0

@@ -3,20 +3,20 @@ version: "3.2"
 services:
   universalforwarder:
     hostname: universalforwarder
-    image: splunk/universalforwarder:latest
+    image: splunk/universalforwarder:${VERSION}
     environment:
       - SPLUNK_START_ARGS=--accept-license
       - SPLUNK_STANDALONE_URL=splunk
       - SPLUNK_PASSWORD=${UF_PASSWORD}
       - SPLUNK_DEPLOYMENT_SERVER=splunk
     volumes:
-      - ./splunkforwarder/data/log:/var/log
+      - ./universalforwarder/data/log:/var/log
     networks:
       - splunk_net
 
   splunk:
     hostname: splunk
-    image: splunk/splunk:latest
+    image: splunk/splunk:${VERSION}
     environment:
       - SPLUNK_START_ARGS=--accept-license
       - SPLUNK_STANDALONE_URI=0.0.0.0

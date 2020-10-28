@@ -3,7 +3,7 @@ version: "3.2"
 services:
   universalforwarder:
     hostname: universalforwarder
-    image: splunk/universalforwarder:latest
+    image: splunk/universalforwarder:${VERSION}
     environment:
       - SPLUNK_START_ARGS=--accept-license
       - SPLUNK_STANDALONE_URL=splunk
@@ -16,7 +16,7 @@ services:
 
   splunk:
     hostname: splunk
-    image: splunk/splunk:latest
+    image: splunk/splunk:${VERSION}
     environment:
       - SPLUNK_START_ARGS=--accept-license
       - SPLUNK_STANDALONE_URI=0.0.0.0

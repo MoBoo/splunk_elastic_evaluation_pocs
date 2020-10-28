@@ -1,0 +1,20 @@
+filebeat.inputs:
+- type: log
+  paths:
+    - /usr/share/data/access.log
+  processors:
+    - add_tags:
+        tags: ["access_combined_wcookie"]
+
+- type: log
+  paths:
+    - /usr/share/data/test.log
+  processors:
+    - add_tags:
+        tags: ["test"]
+
+output.logstash:
+  hosts: ["logstash:5044"]
+
+#output.console:
+#  pretty: true
