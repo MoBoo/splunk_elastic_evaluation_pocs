@@ -1,5 +1,0 @@
-[]
-access = read : [ * ], write : [ * ]
-export = system
-version = 8.0.6
-modtime = 1600965764.448133000

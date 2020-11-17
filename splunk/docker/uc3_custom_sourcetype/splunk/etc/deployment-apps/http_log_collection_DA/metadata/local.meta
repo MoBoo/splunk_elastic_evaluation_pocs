@@ -1,4 +1,0 @@
-[inputs/monitor::///var/log/access.log]
-owner = admin
-version = 8.0.6
-modtime = 1600870279.469540000

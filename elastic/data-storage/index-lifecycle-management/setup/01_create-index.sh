@@ -11,18 +11,16 @@ curl -H "Content-Type: application/json" -X PUT "localhost:9200/_ilm/policy/http
         "min_age": "0ms",
         "actions": {
           "rollover": {
-            "max_age": "1m",
-            "max_size": "50gb"
+            "max_age": "2m",
+            "max_size": "750mb"
           },
           "set_priority": {
             "priority": 100
           }
         }
       },
-      "cold": {
-        "min_age": "2m",
+      "warm": {
         "actions": {
-          "freeze": {},
           "set_priority": {
             "priority": null
           }

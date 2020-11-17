@@ -2,7 +2,7 @@
 #!/bin/bash
 # Start docker container
 echo ">>> Starting docker environment."
-docker-compose up --build -d splunk universalforwarder
+docker-compose up --build -d splunk universalforwarder heavyforwarder
 
 # wait for splunk to become available.
 echo ">>> Waiting for Splunk Web to become available. This may take a while."

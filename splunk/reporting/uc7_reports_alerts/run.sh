@@ -23,6 +23,6 @@ echo ">>> Removing docker environment."
 docker-compose down -v
 
 echo "Attempting to reset to default permissions... (sudo required)"
-sudo ../../scripts/reset_permissions.sh
+sudo ../../scripts/reset_permissions.sh mo
 
 echo ">>> See you soon."
