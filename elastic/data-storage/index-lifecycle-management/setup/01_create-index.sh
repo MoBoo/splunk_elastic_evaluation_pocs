@@ -94,7 +94,7 @@ echo ">>> Creating Index Template: http_access_logs_template"
 	},
         "timestamp":{
 		"type":"date",
-		"format":"dd/MMM/yyyy:HH:mm:ss"
+		"format":"dd/MMM/yyyy:HH:mm:ss Z"
 	}
       }
     }

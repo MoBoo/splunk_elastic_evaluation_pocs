@@ -13,6 +13,15 @@ done
 
 echo ""
 
+# wait for kibana to be available.
+echo ">>> Waiting for elastickibanasearch to become available. This may take a while."
+until $(curl --output /dev/null --silent --head --fail "localhost:5601"); do
+	echo -n "."
+	sleep 5
+done
+
+echo ""
+
 if [ -d "./setup" ]; then
 	echo ">>> Running setup scripts."
 	for file in ./setup/*; do

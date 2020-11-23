@@ -31,7 +31,7 @@ fi
 
 echo ""
 
-docker-compose up --build -d logstash filebeat
+docker-compose up --build -d filebeat
 
 echo ">>> Setup completed. Start streaming docker logs. (Ctrl+C to exit.)"
 

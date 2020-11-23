@@ -20,12 +20,6 @@ curl -H "Content-Type: application/json" -X PUT --user $ELASTIC_USERNAME:$ELASTI
         "patterns": ["%{IPORHOST:client.address} %{USERNAME:client.ident} %{USERNAME:user.name} \\[%{HTTPDATE:timestamp}\\] \"%{WORD:http.request.method} %{NOTSPACE:http.request.content} %{HTTPVERSION:http.version}\" %{INT:http.response.status_code} %{INT:http.response.bytes} \"%{DATA:http.request.referrer}\" \"%{DATA:user_agent.original}\""],
         "ignore_missing": true 
       }
-    },
-    {
-      "date": {
-        "field": "timestamp",
-        "formats": ["dd/MMM/yyyy:HH:mm:ss", "dd/MMM/yyyy:HH:mm:ss Z"]
-      }
     }
   ],
   "on_failure": [

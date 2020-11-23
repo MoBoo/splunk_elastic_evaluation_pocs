@@ -40,5 +40,4 @@ Lookup: http.response.status_code, based on https://wiki.splunk.com/Http_status.
 504 -> Gateway Timeout
 505 -> HTTP Version Not Supported
 
-This PoC ingest data manually, but could also be used in combination with a filebeat input. This is in the current Docker-PoC-Environment difficult to time, because the pipeline and policies have to be in place before filebeat sends data.
 The Logstash-Lookup from uc5, can also use the elasticsearch_filter_plugin to achieve the same result as the ingest-pipeline in this use-case.

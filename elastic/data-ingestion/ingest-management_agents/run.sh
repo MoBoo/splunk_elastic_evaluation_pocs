@@ -23,7 +23,7 @@ until $(curl --output /dev/null --silent --head --fail --user $ELASTIC_USERNAME:
 done
 echo ""
 
-docker-compose up --build -d elastic-agent #logstash filebeat
+docker-compose up --build -d elastic-agent
 
 if [ -d "./setup" ]; then
 	echo ">>> Running setup scripts."

@@ -6,8 +6,8 @@ source .env
 echo ">>> Create Configuration: http_access_logs_conf"
 conf_id=$(curl -X POST -H "Content-Type: application/json" -H "kbn-xsrf: true" "http://localhost:5601/api/ingest_manager/agent_configs?sys_monitoring=true" --user $ELASTIC_USERNAME:$ELASTIC_PASSWORD --silent -d '
 {
-   "name":"test",
-   "description":"test desc",
+   "name":"http_access_logs_conf",
+   "description":"",
    "namespace":"default",
    "monitoring_enabled":[
       "logs",

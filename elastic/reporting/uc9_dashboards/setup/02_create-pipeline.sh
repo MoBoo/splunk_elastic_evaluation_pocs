@@ -22,12 +22,6 @@ echo ">>> Creating Pipeline: access_combined_wcookie_parsing_pipeline"
       "geoip": {
         "field": "client.address"
       }
-    },
-    {
-      "date": {
-        "field": "timestamp",
-        "formats": ["dd/MMM/yyyy:HH:mm:ss", "dd/MMM/yyyy:HH:mm:ss Z"]
-      }
     }
   ],
   "on_failure": [

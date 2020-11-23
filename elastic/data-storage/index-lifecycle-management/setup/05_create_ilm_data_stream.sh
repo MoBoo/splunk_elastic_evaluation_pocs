@@ -6,8 +6,15 @@ curl -XPUT "http://localhost:9200/_ilm/policy/timeseries_policy?pretty" -H 'Cont
       "hot": {
         "actions": {
           "rollover": {
-            "max_size": "50GB",
-            "max_age": "1m"
+            "max_size": "750MB",
+            "max_age": "5m"
+          }
+        }
+      },
+      "warm": {
+        "actions": {
+          "set_priority": {
+            "priority": null
           }
         }
       },

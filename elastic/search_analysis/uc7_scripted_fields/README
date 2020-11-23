@@ -4,5 +4,4 @@ This is usually done via the Kibana-Web-Interface and then automatically applied
 Scripted-Fields are passed to a Elasticsearch query (https://www.elastic.co/guide/en/elasticsearch/reference/current/search-fields.html#script-fields).
 This PoC shows how scripted-fields are applied. In Kibana they can be created in 'Stack Management > Index Patterns > Select Index Pattern > Scripted Fields'.
 
-Scripted fields are limited in their usage in further search by the same request.
-But can be used in visualizations in Kibana
+Scripted fields are limited in their usage in further search by the same request, but can be used in visualizations in Kibana

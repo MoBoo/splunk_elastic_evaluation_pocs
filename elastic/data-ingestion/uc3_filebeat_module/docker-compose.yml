@@ -22,29 +22,6 @@ services:
     networks:
       - elastic
 
-  logstash:
-    build:
-      context: logstash/
-      args:
-        ELK_VERSION: ${ELK_VERSION}
-    environment:
-      ELASTIC_USERNAME: ${ELASTIC_USERNAME}
-      ELASTIC_PASSWORD: ${ELASTIC_PASSWORD}
-      ELASTICSEARCH_HOST_PORT: elasticsearch:9200
-      LS_JAVA_OPTS: "-Xmx${LS_HEAP} -Xms${LS_HEAP}"
-    volumes:
-      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
-      - ./logstash/config/pipelines.yml:/usr/share/logstash/config/pipelines.yml:ro
-      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
-    ports:
-      - "5000:5000"
-      - "5044:5044"
-      - "9600:9600"
-    networks:
-      - elastic
-#    depends_on:
-#      - elasticsearch
-
   kibana:
     build:
       context: kibana/

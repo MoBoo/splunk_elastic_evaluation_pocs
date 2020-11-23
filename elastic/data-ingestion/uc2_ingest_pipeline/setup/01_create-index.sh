@@ -51,7 +51,7 @@ echo ">>> Creating Index Template: http_access_logs_template"
 		},
                 "timestamp":{
 			"type":"date",
-			"format":"dd/MMM/yyyy:HH:mm:ss"
+			"format":"dd/MMM/yyyy:HH:mm:ss Z"
 		}
       }
     },
@@ -64,6 +64,6 @@ echo ">>> Creating Index Template: http_access_logs_template"
   }
 }';echo
 
-echo ">>> Creating Index: http_access_logs"
-/usr/bin/curl -H "Content-Type: application/json" -X PUT "localhost:9200/http_access_logs?pretty=true";
+#echo ">>> Creating Index: http_access_logs"
+#/usr/bin/curl -H "Content-Type: application/json" -X PUT "localhost:9200/http_access_logs?pretty=true";
 
