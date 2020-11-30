@@ -10,7 +10,7 @@ services:
       - SPLUNK_PASSWORD=${UF_PASSWORD}
       - SPLUNK_DEPLOYMENT_SERVER=splunk
     volumes:
-      - ./universalforwarder/data/log:/var/log
+      - ./universalforwarder/data:/var/log
     networks:
       - splunk_net
 

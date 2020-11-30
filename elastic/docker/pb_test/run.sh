@@ -15,6 +15,15 @@ done
 
 echo ""
 
+# wait for kibana to be available.
+echo ">>> Waiting for kibana to become available. This may take a while."
+until $(curl --output /dev/null --silent --head --fail --user $ELASTIC_USERNAME:$ELASTIC_PASSWORD "localhost:5601"); do
+	echo -n "."
+	sleep 5
+done
+
+echo ""
+
 if [ -d "./setup" ]; then
 	echo ">>> Running setup scripts."
 	for file in ./setup/*; do
@@ -26,7 +35,7 @@ fi
 
 echo ""
 
-docker-compose up --build -d logstash filebeat
+docker-compose up --build -d filebeat
 
 echo ">>> Setup completed. Start streaming docker logs. (Ctrl+C to exit.)"
 

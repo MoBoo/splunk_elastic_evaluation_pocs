@@ -1,20 +1,12 @@
 filebeat.inputs:
 - type: log
   paths:
-    - /usr/share/data/access.log
+    - /usr/share/data/flog_access_combined_10GB.log
   index: "http_access_logs-filebeat-%{[agent.version]}-%{+yyyy.MM.dd}"
   pipeline: "access_combined_wcookie_parsing_pipeline"
   processors:
     - add_tags:
         tags: ["access_combined_wcookie"]
-
-- type: log
-  paths:
-    - /usr/share/data/test.log
-  index: "test_logs-filebeat-%{[agent.version]}-%{+yyyy.MM.dd}"
-  processors:
-    - add_tags:
-        tags: ["test"]
 
 output.elasticsearch:
   hosts: ["elasticsearch:9200"]

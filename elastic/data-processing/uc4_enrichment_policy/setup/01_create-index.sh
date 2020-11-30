@@ -41,6 +41,12 @@ echo ">>> Creating Index Template: http_access_logs_template"
 		},
 		"user_agent.original":{
 			"type":"text"
+                        "fields": {
+                          "keyword" : {
+                                "type": "keyword"
+                          }
+                        }
+
 		},
 		"http.version":{
 			"type":"keyword"

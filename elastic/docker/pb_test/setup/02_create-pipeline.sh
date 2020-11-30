@@ -27,15 +27,6 @@ echo ">>> Creating Pipeline: access_combined_wcookie_parsing_pipeline"
       }
     },
     {
-      "date": {
-        "field": "timestamp",
-        "formats": [
-          "dd/MMM/yyyy:HH:mm:ss",
-          "dd/MMM/yyyy:HH:mm:ss Z"
-        ]
-      }
-    },
-    {
       "script": {
         "lang": "painless",
         "source": "ctx[\"pb\"][\"ingest\"][\"output\"] = new Date().getTime(); ctx[\"pb\"][\"ingest\"][\"processing_time_ms\"] = ctx[\"pb\"][\"ingest\"][\"output\"] - ctx[\"pb\"][\"ingest\"][\"input\"]"

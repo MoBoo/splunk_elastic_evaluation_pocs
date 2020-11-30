@@ -17,50 +17,53 @@ echo ">>> Creating Index Template: http_access_logs_template"
         "client.address":{
 			"type":"keyword"
 		},
-		"client.ident":{
-			"type":"keyword"
-		},
-		"user.name":{
-			"type":"keyword"
-		},
-		"http.request.method":{
-			"type":"keyword"
-		},
-		"http.response.status_code":{
-			"type":"long"
-		},
-		"http.response.bytes":{
-			"type":"long"
-		},
-		"http.request.referrer":{
-			"type": "text",
-			"fields": {
-                          "keyword" : {
-				"type": "keyword"
-                          }
-			}
-		},
-		"user_agent.original":{
-			"type":"text"
-		},
-		"http.version":{
-			"type":"keyword"
-		},
-		"tags":{
-			"type":"keyword"
-		},
-                "timestamp":{
-			"type":"date",
-			"format":"dd/MMM/yyyy:HH:mm:ss"
+	"client.ident":{
+		"type":"keyword"
+	},
+	"user.name":{
+		"type":"keyword"
+	},
+	"http.request.method":{
+		"type":"keyword"
+	},
+	"http.response.status_code":{
+		"type":"long"
+	},
+	"http.response.bytes":{
+		"type":"long"
+	},
+	"http.request.referrer":{
+		"type": "text",
+		"fields": {
+                  "keyword" : {
+			"type": "keyword"
+                  }
 		}
+	},
+	"user_agent.original":{
+		"type":"text"
+                        "fields": {
+                          "keyword" : {
+                                "type": "keyword"
+                          }
+                        }
+
+	},
+	"http.version":{
+		"type":"keyword"
+	},
+	"tags":{
+		"type":"keyword"
+	},
+        "timestamp":{
+		"type":"date",
+		"format":"dd/MMM/yyyy:HH:mm:ss Z"
+	},
+	"@timestamp":{
+		"type":"date"
+	}
       }
-    },
-    "aliases": {
-      "http_access_logs_summary": { }
     }
-  },
-  "_meta": {
-    "description": "Index Template for custom http_access_logs."
   }
 }';echo
 

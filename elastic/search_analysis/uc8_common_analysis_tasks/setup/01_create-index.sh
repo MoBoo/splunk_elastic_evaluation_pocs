@@ -1,5 +1,5 @@
 #!/bin/bash
-#echo ">>> Removing Index: http_access_logs"
+	#echo ">>> Removing Index: http_access_logs"
 #/usr/bin/curl -X DELETE "localhost:9200/http_access_logs?pretty=true";echo
 
 echo ">>> Creating Index Template: http_access_logs_template"
