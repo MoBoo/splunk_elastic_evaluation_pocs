@@ -36,6 +36,7 @@ services:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
       - ./logstash/config/pipelines.yml:/usr/share/logstash/config/pipelines.yml:ro
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
+      - ./logstash/data:/usr/share/data
     ports:
       - "5000:5000"
       - "5044:5044"
