@@ -21,7 +21,7 @@ The other two pipelines receive that from the main-pipeline, processes them and 
 
 A similar setup is also described in a blog post by elastic: https://www.elastic.co/blog/how-to-create-maintainable-and-reusable-logstash-pipelines
 
-## Elasticsearch Configuration
-Elasticsearch uses a custom index-template to set index-settings.
-This index-template is created when starting the docker-environment using the `run.sh` script.
+## Runtime Configuration
+Elasticsearch and Kibana uses a custom runtime configuration to create an [index-template](https://www.elastic.co/guide/en/elasticsearch/reference/master/index-templates.html) and [index-pattern](https://www.elastic.co/guide/en/kibana/master/index-patterns.html).
+This configuration is created when starting the docker-environment using the `run.sh` script.
 The scripts used to perform runtime object creation can be found in the [setup](setup)-directory.
