@@ -7,7 +7,7 @@ For enrichment an [enrichment-policy](https://www.elastic.co/guide/en/elasticsea
 In this PoC Filebeat is used to monitor the `/usr/share/data/accesss.log`-file on the local filesystem and output the data to elasticsearch.
 
 When Elasticsearches receives data, the data is then processed using the defined ingest-pipeline in the [filebeat.yml](filebeat/filebeat.yml)
-During processing the `message` field is parsed using a `grok` filter to extract field values.
+During processing the `message` field is parsed using a `grok` filter to extract field values and an enrichment-policy is applied to lookup http status codes.
 
 ## Runtime Configuration
 Elasticsearch and Kibana uses a custom runtime configuration to create an [index-template](https://www.elastic.co/guide/en/elasticsearch/reference/master/index-templates.html), the enrichment-policy, the ingest-pipeline and an [index-pattern](https://www.elastic.co/guide/en/kibana/master/index-patterns.html).
