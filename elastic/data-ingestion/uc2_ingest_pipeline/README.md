@@ -1,7 +1,7 @@
 # Overview
 This PoC uses Filebeat and an [Ingest-Pipeline](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html) as the main ingesting component.
 
-![Overview](docs/uc2_logstash_pipeline.png)
+![Overview](docs/uc2_ingest_pipeline.png)
 
 In this PoC Filebeat is used to monitor the `/usr/share/data/accesss.log`-file on the local filesystem and output the data to elasticsearch.
 
