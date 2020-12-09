@@ -1,4 +1,4 @@
-## Filebeat Configuration ([filebeat.yml](filebeat.yml))
+# Filebeat Configuration ([filebeat.yml](filebeat.yml))
 Filebeat is configured to monitor the local `access.log`-file in `/usr/share/data/`, which is a mounted volume by docker.
 The read file content is the send to logstash for further processing and finally indexing in elasticsearch.
 
