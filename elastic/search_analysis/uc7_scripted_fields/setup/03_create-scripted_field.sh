@@ -1,6 +1,7 @@
 # THIS DOES NOT WORK PROPERLY. IF THIS IS USED, KIBANA WILL OVERRIDE ALL FIELDS IN THE INDEX PATTERN. THEREFORE THIS INDEX PATTERN BECOMES USELESS.
 # to make this work a manual refresh of the index-pattern field list is required. This can be done in "Stack Management -> Index Patterns -> http_access_logs* -> refresh field list"
 
+exit 0
 
 #!/bin/bash
 echo ">>> Create kibana index-pattern: http_access_logs_pattern with scripted field http.reponse.status_code_desc"
