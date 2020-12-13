@@ -16,5 +16,5 @@ This configuration is created when starting the docker-environment using the `ru
 The scripts used to perform runtime object creation can be found in the [setup](setup)-directory.
 - `00_cleanup.sh`: cleanes up index-templates, pipelines, etc. from previous runs.
 - `01_create-index.sh`: Creates an index-template called `http_access_logs_template`, which is applied to every created index, which matches the pattern `http_access_logs*`. Defines index-settings, such as `number_of_shards`, `number_of_replicas` and [field-mappings](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html).
-- `03_create-pipeline`: Creates the ingest-pipeline used to parse log events before they get indexed by elasticsearch.
+- `02_create-pipeline`: Creates the ingest-pipeline used to parse log events before they get indexed by elasticsearch.
 - `03_create_kibana_index_pattern.sh`: Creates a kibana-index-pattern, which matches all `http_access_logs*`-indexes and sets the `timeFieldName` to `timestamp`.
