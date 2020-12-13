@@ -1,8 +1,6 @@
 # Overview
 This PoC uses Filebeat and an [Ingest-Pipeline](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html) as the main ingesting component.
 
-![Overview](docs/uc2_ingest_pipeline.png)
-
 This PoC uses [scripted-fields](https://www.elastic.co/guide/en/kibana/current/scripted-fields.html) to map `http status codes` to `status code text`.
 This is usually done via the Kibana-Web-Interface and then automatically applied by kibana at search time.
 
@@ -12,6 +10,8 @@ This PoC shows how scripted-fields are applied. In Kibana they can be created in
 *Scripted fields are limited in their usage in further search by the same request, but can be used in visualizations in Kibana*
 
 Update 13.12.2020: Another possible way to calculate field during search is the use of [runtime-fields](https://www.elastic.co/guide/en/elasticsearch/reference/master/runtime.html).
+
+![Overview](docs/uc7_ingest_pipeline.png)
 
 In this PoC Filebeat is used to monitor the `/usr/share/data/accesss.log`-file on the local filesystem and output the data to elasticsearch.
 When Elasticsearches receives data, the data is then processed using the defined ingest-pipeline in the [filebeat.yml](filebeat/filebeat.yml)
