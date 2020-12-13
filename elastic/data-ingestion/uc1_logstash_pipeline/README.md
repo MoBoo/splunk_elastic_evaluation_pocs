@@ -30,4 +30,3 @@ The scripts used to perform runtime object creation can be found in the [setup](
 - `00_cleanup.sh`: cleanes up index-templates, pipelines, etc. from previous runs.
 - `01_create-index.sh`: Creates an index-template called `http_access_logs_template`, which is applied to every created index, which matches the pattern `http_access_logs*`. Defines index-settings, such as `number_of_shards`, `number_of_replicas` and [field-mappings](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html).
 - `02_create_kibana_index_pattern.sh`: Creates a kibana-index-pattern, which matches all `http_access_logs*`-indexes and sets the `timeFieldName` to `timestamp`.
-- 
