@@ -10,6 +10,7 @@ Scripted-Fields are passed to a Elasticsearch query (https://www.elastic.co/guid
 This PoC shows how scripted-fields are applied. In Kibana they can be created in `Stack Management > Index Patterns > Select Index Pattern > Scripted Fields`.
 
 *Scripted fields are limited in their usage in further search by the same request, but can be used in visualizations in Kibana*
+
 Update 13.12.2020: Another possible way to calculate field during search is the use of [runtime-fields](https://www.elastic.co/guide/en/elasticsearch/reference/master/runtime.html).
 
 In this PoC Filebeat is used to monitor the `/usr/share/data/accesss.log`-file on the local filesystem and output the data to elasticsearch.
