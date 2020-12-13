@@ -1,10 +1,12 @@
 # Overview
 This PoC shows the usage of a dashboard in kibana. For this example a http-report dashboard is created. It shows some metrics and kpi from the ingested http data by filebeat.
-The dashboard can be found using the kibana ui: `Stack Management > [Kibana] Saved Objects`
+The dashboard can be found using the kibana ui: `Stack Management > [Kibana] Saved Objects > 	HTTP Demo Dashboard`
 
-![Overview](docs/uc9_ingest_pipeline.png)
+![HTTP Dashboard](docs/dashboard.png)
 
 This PoC uses Filebeat and an [Ingest-Pipeline](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html) as the main ingesting component.
+
+![Overview](docs/uc9_ingest_pipeline.png)
 
 This PoC uses [scripted-fields](https://www.elastic.co/guide/en/kibana/current/scripted-fields.html) to map `http status codes` to `status code text`.
 This is usually done via the Kibana-Web-Interface and then automatically applied by kibana at search time.
