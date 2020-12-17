@@ -1,10 +1,15 @@
 # Overview
-This PoC shows the usage of alerts in Splunk.
-Alerts are based on savedsearches which are executed on a predefined interval. If a certain alert-condition is matched, an alert is raised and shown in the Splunk web interface.
-Raised Alerts can trigger various actions, e.g. sending an email, executing a custom script or send an HTTP POST request.
+This PoC shows the usage of reports in Splunk.
+Reports are pre-defined (saved) searches, which can be executed manually or run on a defined schedule.
 
-In this PoC an alert is created, which raises a notification in Splunk, if the number of events with an HTTP Internal Server Error exceeds 500 per hour.
+Alerts are based on savedsearches which are executed on a predefined interval. If a certain alert-condition is matched, an alert is raised and shown in the Splunk web interface.
+
+Scheduled reports and raised alerts can trigger various actions, e.g. sending an email, executing a custom script or send an HTTP POST request.
+
+In this PoC a report (which could be (is not) scheduled to run every week and send the report per mail) and an alert are created. The alert raises a notification in Splunk, if the number of events with an HTTP Internal Server Error exceeds 500 per hour.
 (Because events aren't kontinually ingested into splunk, the `_index_earliest/latest`-fields are used to filter by time, instead of `earliest / latest)`
+
+![alert](docs/alert.png)
 
 ![Overview](docs/overview.png)
 
