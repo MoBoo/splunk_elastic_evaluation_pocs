@@ -1,7 +1,7 @@
 # Overview
 This PoC uses the Splunk [Universalforwarder](https://www.splunk.com/en_us/download/universal-forwarder.html) and [Heavyforwarder](https://docs.splunk.com/Splexicon:Heavyforwarder) as the main ingesting component.
 
-![Overview](uc1_data_onboarding_hf.png)
+![Overview](docs/uc1_data_onboarding_hf.png)
 
 In this PoC the Universalforwarder is used to monitor the `/usr/share/data/accesss.log`-file on the local filesystem and output the data to the heavyforwarder.
 The heavyforwarder receives data from the universalforwarder and monitors the local `/usr/share/data/accesss.log`-file. The heavyforwarder then forwards the data to Splunk.
