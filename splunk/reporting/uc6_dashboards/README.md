@@ -4,7 +4,7 @@ This PoC also showcases some of the available visualisations splunk provides.
 
 ![Dashboard](docs/dashboard.png)
 
-The dashboard itself can be viewed in Splunk: 
+The dashboard itself can be viewed in Splunk: http://localhost:8000/en-GB/app/search/http_demo_dashboard
 The dashboard source (xml) can found [here](splunk/etc/apps/http_log_collection_TA/default/data/ui/views/http_demo_dashboard.xml).
 
 For advanced purposes dashboards can also be created using HTML, CSS and JS, which allows for even more flexibility.
