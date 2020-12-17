@@ -1,7 +1,7 @@
 # Overview
 This PoC uses the Splunk [Universalforwarder](https://www.splunk.com/en_us/download/universal-forwarder.html) as the main ingesting component.
 
-![Overview](docs/data-ingest.png)
+![Overview](docs/overview.png)
 
 In this PoC the Universalforwarder is used to monitor the `/usr/share/data/accesss.log`-file on the local filesystem and output the data to Splunk.
 As the more data is ingested into Splunk and the stored data ages, Splunk applies certain Lifecycle-Policies to the index:
