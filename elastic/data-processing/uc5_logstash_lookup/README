@@ -1,1 +1,0 @@
-The filter-plugins used in this example in logstash, can also be used in elasticsearchs ingest-pipelines.

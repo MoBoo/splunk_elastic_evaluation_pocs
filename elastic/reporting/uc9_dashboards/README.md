@@ -1,9 +1,12 @@
 # Overview
-This PoC shows a sample or queries, typically used in log analysis. Those queries are stored as kibana objects so they can easily be accessed via the kibana UI: `Stack Management -> [Kibana] Saved Objects` or maually execute via the scripts stored in the [searches](searches) directory.
+This PoC shows the usage of a dashboard in kibana. For this example a http-report dashboard is created. It shows some metrics and kpi from the ingested http data by filebeat.
+The dashboard can be found using the kibana ui: `Stack Management > [Kibana] Saved Objects > 	HTTP Demo Dashboard`
 
-![Overview](docs/uc8_ingest_pipeline.png)
+![HTTP Dashboard](docs/dashboard.png)
 
 This PoC uses Filebeat and an [Ingest-Pipeline](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html) as the main ingesting component.
+
+![Overview](docs/uc9_ingest_pipeline.png)
 
 This PoC uses [scripted-fields](https://www.elastic.co/guide/en/kibana/current/scripted-fields.html) to map `http status codes` to `status code text`.
 This is usually done via the Kibana-Web-Interface and then automatically applied by kibana at search time.
@@ -23,13 +26,3 @@ The scripts used to perform runtime object creation can be found in the [setup](
 - `02_create-pipeline`: Creates the ingest-pipeline used to parse log events before they get indexed by elasticsearch.
 - `03_create_kibana_index_pattern.sh`: Creates a kibana-index-pattern, which matches all `http_access_logs*`-indexes and sets the `timeFieldName` to `timestamp`.
 - `04_import_kibana_objects.sh`: Imports saved kibana objects from the `kibana-export` directory.
-
-## Run searches manually
-Scripts are stored in the [searches](searches) directory.
-Those scripts are used to manually run the searches via curl which otherwise are already imported in kibana.
-Searches include:
-- Filtering data by key value matches. E.g. `http.request.method==GET` (see [01_filter.sh](searches/01_filter.sh))
-- Aggregating data by diffrent fields or multiple fields (see [03_aggregation.sh](searches/03_aggregation.sh))
-- Filter search output to specific fields only. (see [05_filter_columns.sh](searches/05_filter_columns.sh))
-- Adding fields ([02_add_column.sh](searches/02_add_column.sh)) during searchtime cannot be done currently. One option could be to use kibana [scripted-fields](https://www.elastic.co/guide/en/kibana/current/scripted-fields.html). Also see [uc7_scripted_fields](../uc7_scripted_fields). Currently in beta phase are [runtime fields](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/runtime.html). Those are not part of this PoC, but could provide a valueable addition in the future.
-- Renameing Fields ([04_rename_column.sh](searches/04_rename_column.sh)): Currently cannot be done during search.

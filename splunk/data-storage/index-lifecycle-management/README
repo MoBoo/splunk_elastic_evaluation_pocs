@@ -1,1 +1,15 @@
-Lookups also can be done via scripts, e.g. python. This gives almost maximum freedom. But lookups will always be executed at search time.
+# max hot bucket size in MB, before it gets rolled over to warm bucket
+maxDataSize = 750
+
+# max hot bucket age, before it gets rolled over to warm bucket
+maxHotSpanSecs = 3600
+maxHotIdleSecs = 30
+
+# max hot/warm bucket size, before rolled over to cold
+homePath.maxDataSizeMB = 10
+
+# max cold bucket size, before rolled to frozen or deleted
+coldPath.maxDataSizeMB = 10
+
+# max total age of data, before moved to frozen or deleted. Based on the timestamp of data (grouped by bucket)
+frozenTimePeriodInSecs = 300

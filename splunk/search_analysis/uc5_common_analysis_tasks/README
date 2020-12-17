@@ -1,1 +1,23 @@
-Lookups also can be done via scripts, e.g. python. This gives almost maximum freedom. But lookups will always be executed at search time.
+[add_column]
+search = index="http_logs" | eval foo="bar"
+
+[add_column_conditional]
+search = index="http_logs" | eval status_description = CASE(status>=100 AND status<200, "Informational", status>=200 AND status<300, "Successful", status>=300 AND status<400, "Redirect", status>=400 AND status<500, "Client Error", status>=500 AND status<600, "Internal Server Error", true(), "N/A") | table status status_description
+
+[aggregation_count_by_method]
+search = index="http_logs" | stats count by method
+
+[aggregation_count_by_multiple_fields]
+search = index="http_logs" | stats count by method, useragent
+
+[aggregation_methods_by_field]
+search = index="http_logs" | stats sum(bytes) by method
+
+[filter_by_fields]
+search = index="http_logs" method=GET AND action=* AND (status=200 OR status>400)
+
+[filter_columns]
+search = index="http_logs" | table status status_description
+
+[rename_column]
+search = index="http_logs" | rename status as http_status_code

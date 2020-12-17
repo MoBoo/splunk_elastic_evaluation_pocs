@@ -1,12 +1,17 @@
 # Overview
-This PoC shows a sample or queries, typically used in log analysis. Those queries are stored as kibana objects so they can easily be accessed via the kibana UI: `Stack Management -> [Kibana] Saved Objects` or maually execute via the scripts stored in the [searches](searches) directory.
-
-![Overview](docs/uc8_ingest_pipeline.png)
-
 This PoC uses Filebeat and an [Ingest-Pipeline](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html) as the main ingesting component.
 
 This PoC uses [scripted-fields](https://www.elastic.co/guide/en/kibana/current/scripted-fields.html) to map `http status codes` to `status code text`.
 This is usually done via the Kibana-Web-Interface and then automatically applied by kibana at search time.
+
+Scripted-Fields are passed to a Elasticsearch query (https://www.elastic.co/guide/en/elasticsearch/reference/current/search-fields.html#script-fields).
+This PoC shows how scripted-fields are applied. In Kibana they can be created in `Stack Management > Index Patterns > Select Index Pattern > Scripted Fields`.
+
+*Scripted fields are limited in their usage in further search by the same request, but can be used in visualizations in Kibana*
+
+Update 13.12.2020: Another possible way to calculate field during search is the use of [runtime-fields](https://www.elastic.co/guide/en/elasticsearch/reference/master/runtime.html).
+
+![Overview](docs/uc7_ingest_pipeline.png)
 
 In this PoC Filebeat is used to monitor the `/usr/share/data/accesss.log`-file on the local filesystem and output the data to elasticsearch.
 When Elasticsearches receives data, the data is then processed using the defined ingest-pipeline in the [filebeat.yml](filebeat/filebeat.yml)
@@ -21,15 +26,5 @@ The scripts used to perform runtime object creation can be found in the [setup](
 - `00_cleanup.sh`: cleanes up index-templates, pipelines, etc. from previous runs.
 - `01_create-index.sh`: Creates an index-template called `http_access_logs_template`, which is applied to every created index, which matches the pattern `http_access_logs*`. Defines index-settings, such as `number_of_shards`, `number_of_replicas` and [field-mappings](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html).
 - `02_create-pipeline`: Creates the ingest-pipeline used to parse log events before they get indexed by elasticsearch.
-- `03_create_kibana_index_pattern.sh`: Creates a kibana-index-pattern, which matches all `http_access_logs*`-indexes and sets the `timeFieldName` to `timestamp`.
-- `04_import_kibana_objects.sh`: Imports saved kibana objects from the `kibana-export` directory.
-
-## Run searches manually
-Scripts are stored in the [searches](searches) directory.
-Those scripts are used to manually run the searches via curl which otherwise are already imported in kibana.
-Searches include:
-- Filtering data by key value matches. E.g. `http.request.method==GET` (see [01_filter.sh](searches/01_filter.sh))
-- Aggregating data by diffrent fields or multiple fields (see [03_aggregation.sh](searches/03_aggregation.sh))
-- Filter search output to specific fields only. (see [05_filter_columns.sh](searches/05_filter_columns.sh))
-- Adding fields ([02_add_column.sh](searches/02_add_column.sh)) during searchtime cannot be done currently. One option could be to use kibana [scripted-fields](https://www.elastic.co/guide/en/kibana/current/scripted-fields.html). Also see [uc7_scripted_fields](../uc7_scripted_fields). Currently in beta phase are [runtime fields](https://www.elastic.co/guide/en/elasticsearch/reference/7.x/runtime.html). Those are not part of this PoC, but could provide a valueable addition in the future.
-- Renameing Fields ([04_rename_column.sh](searches/04_rename_column.sh)): Currently cannot be done during search.
+- `03_create-scripted_field.sh`: *This does not work properly right now* (see [03_create-scripted_field.sh](setup/03_create-scripted_field.sh))
+- `04_query_selected_field.sh`: Queries elasticsearch including a scripted field `http.response.status_code_desc`. Maps `status_codes` to descriptions for easier understanding. (e.g.: 200 -> 'Ok', 404 -> 'Not Found', .etc.)
