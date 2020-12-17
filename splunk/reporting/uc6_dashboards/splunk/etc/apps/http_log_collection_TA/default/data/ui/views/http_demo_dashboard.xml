@@ -82,7 +82,7 @@
       <title>Request per User-Agent</title>
       <chart>
         <search>
-          <query>index=http_logs | stats count by useragent</query>
+          <query>index=http_logs | eval browser=case(like(useragent, "%Firefox%"), "Firefox", like(useragent, "%Safari%"), "Safari", like(useragent, "%Opera%"), "Opera", true(), "N/A") | stats count by browser</query>
           <earliest>$input_time_global.earliest$</earliest>
           <latest>$input_time_global.latest$</latest>
         </search>
