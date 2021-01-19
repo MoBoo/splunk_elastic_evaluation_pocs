@@ -22,6 +22,11 @@ echo ">>> Creating Pipeline: access_combined_wcookie_parsing_pipeline"
       "geoip": {
         "field": "client.address"
       }
+    },
+    {
+      "user_agent": {
+        "field": "user_agent.original"
+      }
     }
   ],
   "on_failure": [

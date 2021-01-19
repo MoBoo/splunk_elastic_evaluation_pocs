@@ -5,7 +5,7 @@
 echo ">>> Creating Pipeline: access_combined_wcookie_parsing_pipeline"
 /usr/bin/curl -H "Content-Type: application/json" -X PUT "localhost:9200/_ingest/pipeline/access_combined_wcookie_parsing_pipeline?pretty=true" -d '
 {
-  "description": "This pipeline parses 'access_combined_wcookie' logs.",
+  "description": "This pipeline parses \"access_combined_wcookie\" logs.",
   "processors": [
     {
       "grok": {
