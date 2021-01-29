@@ -10,10 +10,10 @@ Follow the instructions on the official docker documentation: [Install Docker Co
 
 ### Add your user to `docker` group
 1. Create `docker` group: `$ sudo groupadd docker`.
-2. Add current user to `docker` group: `sudo usermod -aG docker $USER`
-3. Log out and log back in or reload group changes with: `newgrp docker`
+2. Add current user to `docker` group: `$ sudo usermod -aG docker $USER`
+3. Log out and log back in or reload group changes with: `$ newgrp docker`
 
-Test and verify your user is able to run docker: `docker run hello-world`
+Test and verify your user is able to run docker: `$ docker run hello-world`
 
 Taken from [Docker Post-installation steps for Linux](https://docs.docker.com/engine/install/linux-postinstall/)
 
