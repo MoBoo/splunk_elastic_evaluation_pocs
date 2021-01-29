@@ -6,6 +6,12 @@ This is due to changes to file-permission, when files are mounted into the splun
 [Docker Linux Installation](https://docs.docker.com/engine/install/ubuntu/)
 
 # Quickstart
+Download or clone the github repository on your machine.
+```
+$ git clone https://github.com/MoBoo/splunk_elastic_evaluation_pocs.git
+$ cd splunk_elastic_evaluation_pocs
+```
+
 PoCs are organized in directories based on the value-chain:
 ```
 .
