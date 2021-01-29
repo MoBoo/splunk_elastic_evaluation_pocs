@@ -3,7 +3,10 @@
 Either `root` or `sudo` priviledges are required to run the pocs. 
 This is due to changes to file-permission, when files are mounted into the splunk docker environment and cleanup. (see [reset_permissions.sh](splunk/scripts/reset_permissions.sh))
 ### Docker
-[Docker Linux Installation](https://docs.docker.com/engine/install/ubuntu/)
+Follow the instructions on the official docker documentation: [Docker Linux Installation](https://docs.docker.com/engine/install/ubuntu/)
+
+### Docker Compose
+Follow the instructions on the official docker documentation: [Install Docker Compose](https://docs.docker.com/compose/install/)
 
 # Quickstart
 Download or clone the github repository on your machine.
