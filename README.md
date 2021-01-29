@@ -1,4 +1,6 @@
 # Proof-of-Concepts: Splunk and Elastic Evaluation
+## System Requirements
+This repository was developed and tested on an Ubuntu 20.04 Virtual Machine with 4 CPU-Cores and 8GB RAM. 
 ## Dependencies
 Either `root` or `sudo` priviledges are required to run the pocs. 
 This is due to changes to file-permission, when files are mounted into the splunk docker environment and cleanup. (see [reset_permissions.sh](splunk/scripts/reset_permissions.sh))
