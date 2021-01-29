@@ -21,7 +21,7 @@ PoCs are organized in directories based on the value-chain:
    |       └── run.sh
    └── scripts
 ```
-`README` gives an overview for each poc.
+The `README` gives an overview for each poc.
 
 To run a PoC go to the desired PoC-directory and execute the `run.sh` script:
 
