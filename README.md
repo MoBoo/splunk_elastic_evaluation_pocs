@@ -1,4 +1,19 @@
 # Proof-of-Concepts: Splunk and Elastic Evaluation
+## PoC Overview
+| Wertschöpfungsphase | Splunk | Elastic |
+|-|-|-|
+| Dateneingabe | [Data Onboarding UF](splunk/Dateneingabe/Data%20Onboarding%20UF) | [Ingest Pipeline](elastic/Dateneingabe/Ingest%20Pipeline) |
+|  | [Data Onboarding HF](splunk/Dateneingabe/Data%20Onboarding%20HF) | [Filebeat Modules](elastic/Dateneingabe/Filebeat%20Modules) |
+|  |  | [Logstash Pipeline](elastic/Dateneingabe/Logstash%20Pipeline) |
+|  |  | [Elastic Agents Fleet](elastic/Dateneingabe/Elastic%20Agents%20Fleet) |
+| Datenverarbeitung | [Custom Sourcetype Fieldextractions](splunk/Datenverarbeitung/Custom%20Sourcetype%20Fieldextractions) | [Enrichment Policy](elastic/Datenverarbeitung/Enrichment%20Policy) |
+|  | [CIM Normalisierung](splunk/Datenverarbeitung/CIM%20Normalisierung) | [Logstash Lookup](elastic/Datenverarbeitung/Logstash%20Lookup) |
+|  | [Lookups](splunk/Datenverarbeitung/Lookups) | [Kibana Static Lookup](elastic/Datenverarbeitung/Kibana%20Static%20Lookup) |
+| Datenspeicherung | [Index Lifecycle Management](splunk/Datenspeicherung/Index%20Lifecycle%20Management) | [Index Lifecycle Management](elastic/Datenspeicherung/Index%20Lifecycle%20Management) |
+| Datenanalyse | [Common Analysis Tasks](splunk/Datenanalyse/Common%20Analysis%20Tasks) | [Common Analysis Tasks](elastic/Datenanalyse/Common%20Analysis%20Tasks) |
+|  |  | [Scripted Fields](elastic/Datenanalyse/Scripted%20Fields) |
+| Berichterstattung | [Dashboarding](splunk/Berichterstattung/Dashboarding) | [Dashboarding](elastic/Berichterstattung/Dashboarding) |
+|  | [Alarmierungen](splunk/Berichterstattung/Alarmierungen) | [Alarmierungen](elastic/Berichterstattung/Alarmierungen) |
 ## System Requirements
 This repository was developed and tested on an Ubuntu 20.04 Virtual Machine with 4 CPU-Cores and 8GB RAM. 
 ## Dependencies
